@@ -1,0 +1,6 @@
+scikit-learn==1.7.2
+pandas==2.3.3
+xgboost==3.1.1
+joblib==1.5.2
+kfp==2.14.6
+google-cloud-aiplatform==1.122.0

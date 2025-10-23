@@ -1,81 +1,81 @@
-# Road Accident Playground Project
+# Road Accident Playground
 
+Projeto de playground para experimentação com dados de acidentes de trânsito, focado em práticas do Vertex AI (Feature Store, Experiments e Pipelines).
 
-Este repositório contém um projeto de playground focado em acidentes de trânsito.
+## Visão geral
 
+Este repositório contém exemplos e notebooks usados para aprendizado e testes com Vertex AI:
+- explorer.ipynb — uso de Feature Store e Experiments  
+- pipeline_teste — pipeline de exemplo (sem dados de treino)  
+- segundo_pipline — pipeline completo com treino e teste
 
-## 1. Configuração do Ambiente
+## Estrutura do repositório (resumida)
 
+- explorer.ipynb
+- pipeline_teste/
+- segundo_pipline/
+- README.md
 
-Siga estas etapas para configurar seu ambiente local e executar o projeto.
+## Pré-requisitos
 
+- Python 3.8+
+- Git
+- Google Cloud SDK (gcloud) para autenticação
+- Conta/projeto no Google Cloud com Vertex AI habilitado
 
-### 1.1. Pré-requisitos
+## Configuração do ambiente
 
+1. Clone o repositório:
+   ```
+   git clone https://github.com/LeopoldoZanellato/road_accident_playground.git
+   cd road_accident_playground
+   ```
 
-* Python 3.8 ou superior
-* Git
-* Google Cloud SDK (para autenticação `gcloud`)
+2. Crie e ative um ambiente virtual.
 
-
-### 1.2. Clonar o Repositório
-
-
-Primeiro, clone o repositório do GitHub para sua máquina local:
-
-
-```
-git clone https://github.com/LeopoldoZanellato/road_accident_playground.git
-cd road_accident_playground
-```
-
-
-### 1.3. Criar um Ambiente Virtual
-
-
-É altamente recomendado usar um ambiente virtual (como `venv`) para isolar as dependências do projeto.
-
-
-**Windows:**
+Windows:
 ```
 python -m venv venv
-.\\venv\\Scripts\\activate
+.\venv\Scripts\activate
 ```
 
-
-**macOS / Linux:**
+macOS / Linux:
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-
-### 1.4. Instalar as Bibliotecas Necessárias
-
-
-Com o ambiente virtual ativado, instale as bibliotecas Python necessárias:
-
-
+3. Instale dependências:
 ```
 pip install scikit-learn pandas xgboost joblib kfp google-cloud-aiplatform
 ```
-
-
-*(Opcional: Se houver um arquivo `requirements.txt` no projeto, você pode usar:)*
+Ou, se existir, use:
 ```
 pip install -r requirements.txt
 ```
 
+## Autenticação Google Cloud
 
-### 1.5. Autenticação Google Cloud
-
-
-Para interagir com os serviços do Google Cloud (como o AI Platform/Vertex AI), você precisa se autenticar. Execute o seguinte comando e siga as instruções no navegador:
-
-
+Autentique-se com:
 ```
 gcloud auth login
+gcloud config set project YOUR_PROJECT_ID
 ```
+Substitua YOUR_PROJECT_ID pelo ID do seu projeto GCP.
 
+## Uso rápido
 
-O ambiente agora está configurado e pronto para executar o projeto.
+- Abra e execute `explorer.ipynb` para explorar Feature Store e Experiments.
+- Consulte as pastas `pipeline_teste` e `segundo_pipline` para exemplos de pipelines (scripts e YAMLs).
+- Ajuste variáveis de projeto/endpoint nos scripts antes de executar no Vertex AI.
+
+## Links úteis
+
+- Feature Store: https://cloud.google.com/vertex-ai/docs/featurestore/latest/overview?hl=pt-br  
+- Experiments: https://cloud.google.com/vertex-ai/docs/experiments/intro-vertex-ai-experiments?hl=pt-br  
+- Pipelines: https://cloud.google.com/vertex-ai/docs/pipelines/introduction?hl=pt-br
+
+## Observações
+
+- Este repositório é voltado para aprendizado/prática — ajuste caminhos, nomes de bucket e permissões antes de rodar em produção.
+
